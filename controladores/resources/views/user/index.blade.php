@@ -16,6 +16,11 @@
     </style>
 </head>
 <body>
-    <h1>Hola capo</h1>
+    <h1>Listado:</h1>
+    <ul>
+        @foreach ($users as $user)
+            <li>{{ $user->name }}</li>
+        @endforeach
+    </ul>
 </body>
 </html>
