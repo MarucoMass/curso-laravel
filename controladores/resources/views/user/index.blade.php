@@ -24,6 +24,11 @@
         @foreach ($users as $user)
             <li>{{ $user->name }}</li>
         @endforeach
+        <hr>
+        @foreach ($users_menores as $user_menor)
+            <li>{{ $user_menor->name }} Edad: {{$user_menor->age}}</li>
+        @endforeach
+
     </ul>
     @endif
 </body>
