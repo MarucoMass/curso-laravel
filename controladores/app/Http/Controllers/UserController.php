@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -12,10 +13,17 @@ class UserController extends Controller
         $users = User::all();
         $users_menores = User::where('age', '<', '40')->orderBy('age', 'asc')->limit(1)->get();
 
+        //SLQ RAW
+        $variable = "Rob";
+        $db = DB::select( DB::raw("SELECT * FROM users WHERE name='$variable'"));
+
         return view('user.index', compact('users'), compact('users_menores')); 
         // compact() es lo mismo que poner el array ["users" => $users]. Se usa cuando los nombres son iguales
     }
     public function create(){
+        //SLQ RAW
+        DB::insert(DB::raw("INSERT INTO users VALUES ..."));
+
         $user = new User();
         $user->name="Robson";
         $user->email = "robson@mail.com";
