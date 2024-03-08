@@ -17,10 +17,14 @@
 </head>
 <body>
     <h1>Listado:</h1>
+    @if ($users->isEmpty())
+        <h2>No hay usuarios</h2>
+    @else
     <ul>
         @foreach ($users as $user)
             <li>{{ $user->name }}</li>
         @endforeach
     </ul>
+    @endif
 </body>
 </html>
