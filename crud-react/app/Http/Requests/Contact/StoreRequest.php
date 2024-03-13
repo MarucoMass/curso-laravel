@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:100'],
-            'avatar' => ['nullable', 'mimes:jpg,png,jpeg', 'max:2040'],
+            'avatar' => ['nullable', 'mimes:jpg,png,jpeg', 'max:2048'],
             'visibility' => ['required', 'in:public,private']
         ];
     }

@@ -30,7 +30,7 @@ const Index = ({ auth, contacts }) => {
                                 <div className="flow-root">
                                     <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
                                         {
-                                            contacts.map((contact) => (
+                                            contacts?.map((contact) => (
                                                 <li key={contact.id} className="py-3 sm:py-4">
                                                     <div className="flex items-center">
                                                         <div className="flex-shrink-0">

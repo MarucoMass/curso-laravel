@@ -49,7 +49,6 @@ const Create = ({ auth }) => {
                                         name="name"
                                         value={data.name}
                                         className="mt-1 block w-full"
-                                        isFocused={true}
                                         onChange={(e) => setData('name', e.target.value)}
                                     />
 
@@ -65,7 +64,6 @@ const Create = ({ auth }) => {
                                         name="phone"
                                         value={data.phone}
                                         className="mt-1 block w-full"
-                                        isFocused={true}
                                         onChange={(e) => setData('phone', e.target.value)}
                                     />
 
@@ -80,7 +78,6 @@ const Create = ({ auth }) => {
                                         type="file"
                                         name="avatar"
                                         className="mt-1 block w-full"
-                                        isFocused={true}
                                         onChange={(e) => setData('avatar', e.target.files[0])}
                                     />
 
@@ -91,8 +88,8 @@ const Create = ({ auth }) => {
                                     <InputLabel htmlFor="visibility" value="Visibilidad" />
 
                                     <select
-                                        name=""
-                                        id=""
+                                        name="visibility"
+                                        id="visibility"
                                         onChange={(e) => setData('visibility', e.target.value)}
                                         className="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
                                         <option value="public">Público</option>

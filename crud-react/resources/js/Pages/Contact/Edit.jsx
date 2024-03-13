@@ -49,7 +49,6 @@ const Edit = ({ auth, contact }) => {
                                         name="name"
                                         value={data.name}
                                         className="mt-1 block w-full"
-                                        isFocused={true}
                                         onChange={(e) => setData('name', e.target.value)}
                                     />
 
@@ -65,7 +64,6 @@ const Edit = ({ auth, contact }) => {
                                         name="phone"
                                         value={data.phone}
                                         className="mt-1 block w-full"
-                                        isFocused={true}
                                         onChange={(e) => setData('phone', e.target.value)}
                                     />
 
@@ -80,7 +78,6 @@ const Edit = ({ auth, contact }) => {
                                         type="file"
                                         name="avatar"
                                         className="mt-1 block w-full"
-                                        isFocused={true}
                                         onChange={(e) => setData('avatar', e.target.files[0])}
                                     />
 
