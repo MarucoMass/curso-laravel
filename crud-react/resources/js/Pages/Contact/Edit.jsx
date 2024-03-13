@@ -6,13 +6,13 @@ import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import Input from './Input';
 import PrimaryButton from '@/Components/PrimaryButton';
-const Create = ({ auth }) => {
+const Edit = ({ auth, contact }) => {
 
     const initialValues = {
-        name: "",
-        phone: "",
+        name: contact.name,
+        phone: contact.phone,
         avatar: null,
-        visibility: ""
+        visibility: contact.visibility
     }
 
     const { data, errors, setData, post } = useForm(initialValues);
@@ -20,7 +20,7 @@ const Create = ({ auth }) => {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('contact.store'));
+        post(route('contact.update', contact));
     }
 
     return (
@@ -28,7 +28,7 @@ const Create = ({ auth }) => {
             user={auth.user}
             header={
                 <div className='flex justify-between'>
-                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">Crear contactos</h2>
+                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">Editar contacto</h2>
                     <Link href={route('contact.index')}>Contactos</Link>
                 </div>
             }
@@ -91,8 +91,9 @@ const Create = ({ auth }) => {
                                     <InputLabel htmlFor="visibility" value="Visibilidad" />
 
                                     <select
-                                        name=""
-                                        id=""
+                                        name="visibility"
+                                        id="visibility"
+                                        defaultValue={contact.visibility}
                                         onChange={(e) => setData('visibility', e.target.value)}
                                         className="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
                                         <option value="public">Público</option>
@@ -103,7 +104,7 @@ const Create = ({ auth }) => {
                                 </div>
 
                                 <PrimaryButton className='w-fit'>
-                                    Crear contacto
+                                    Editar contacto
                                 </PrimaryButton>
 
                             </form>
@@ -115,4 +116,4 @@ const Create = ({ auth }) => {
     );
 }
 
-export default Create;
+export default Edit;
